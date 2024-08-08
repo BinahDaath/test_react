@@ -55,7 +55,7 @@ export function TodoList() {
         return renderChessCase2;
     }
   return (
-    <div>
+    <div className="grid grid-cols-8">
         {renderChessTable(chessTable)}
     </div>
   );
