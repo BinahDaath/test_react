@@ -8,7 +8,11 @@ export function TodoList() {
     "Clean house",
   ]);
   const [task, setTask] = useState("");
-  let s={width:"800px",height:"800px"};
+  //let s={width:"800px",height:"800px"};
+  let handw=Math.min(window.innerHeight,window.innerWidth)
+  //let s={width:Math.floor((window.innerHeight/8)*8)+"px",height:Math.floor((window.innerHeight/8)*8)};
+  let s={width:Math.floor((handw/8)*8)+"px",height:Math.floor((handw/8)*8)};
+  //(window.innerHeight/8)
   const [chessTable, setchessTable] = useState([
     ["br","bkn","bb","bq","bk","bb","bkn","br"],
     ["bp","bp","bp","bp","bp","bp","bp","bp"],
