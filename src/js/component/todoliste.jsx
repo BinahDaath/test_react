@@ -57,7 +57,7 @@ export function TodoList() {
     }
     console.log(renderChessTable(chessTable))
   return (
-    <div className="grid grid-cols-8" style={s}>
+    <div className="grid grid-cols-8 gap-0" style={s}>
         {renderChessTable(chessTable)}
     </div>
   );
