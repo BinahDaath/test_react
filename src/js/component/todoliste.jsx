@@ -8,6 +8,7 @@ export function TodoList() {
     "Clean house",
   ]);
   const [task, setTask] = useState("");
+  let s={width:"800px",height:"800px"};
   const [chessTable, setchessTable] = useState([
     ["br","bkn","bb","bq","bk","bb","bkn","br"],
     ["bp","bp","bp","bp","bp","bp","bp","bp"],
@@ -32,21 +33,21 @@ export function TodoList() {
         {
             if((index%2)===0)
             {
-                return <div className="bg-white">{el}</div>
+                return <div className="bg-white">{el===""? "empty":el}</div>
                 //return "w";
             }
             //return "b";
-            return <div className="bg-black">{el}</div>
+            return <div className="bg-black">{el===""? "empty":el}</div>
         }
         const renderChessCase2=(el,index)=>
         {
             if((index%2)===0)
             {
                 //return "b";
-                return <div className="bg-black">{el}</div>
+                return <div className="bg-black">{el===""? "empty":el}</div>
             }
             //return "w";
-            return <div className="bg-white">{el}</div>
+            return <div className="bg-white">{el===""? "empty":el}</div>
         }
         if((index%2)===0)
         {
@@ -54,8 +55,9 @@ export function TodoList() {
         }
         return renderChessCase2;
     }
+    console.log(renderChessTable(chessTable))
   return (
-    <div className="grid grid-cols-8">
+    <div className="grid grid-cols-8" style={s}>
         {renderChessTable(chessTable)}
     </div>
   );
