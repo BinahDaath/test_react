@@ -53,14 +53,14 @@ const blackPawn=()=>
     }
     if((clickedx+1)<7)
     {
-      if((getColor(chessTable[clickedy-1][clikedx+1])!==turn)&&(getColor(chessTable[clickedy-1][clikedx+1])!=="empty"))
+      if((getColor(clickedx+1,clickedy-1)!==turn)&&(getColor(clickedx+1,clickedy-1)!=="empty"))
       {
         position.push([clikedy-1,clickedx+1]);
       }
     }
     if((clickedx-1)>0)
     {
-      if((getColor(chessTable[clickedy-1][clickedx-1])!==turn)&&(getColor(chessTable[clickedy-1][clikedx-1])!=="empty"))
+      if((getColor(clickedx-1,clickedy-1)!==turn)&&(getColor(clickedx-1,clickedy-1)!=="empty"))
       {
         position.push([clickedy-1,clickedx-1]);
       }
@@ -75,14 +75,14 @@ const blackPawn=()=>
     }
     if((clickedx+1)<7)
     {
-      if((getColor(chessTable[clickedy+1][clickedx+1])!==turn)&&(getColor(chessTable[clickedy+1][clikedx+1])!=="empty"))
+      if((getColor(clickedx+1,clickedy+1)!==turn)&&(getColor(clickedx+1,clickedy+1)!=="empty"))
       {
         position.push([clickedy+1,clickedx+1]);
       }
     }
     if((clickedx-1)>0)
     {
-      if((getColor(chessTable[clickedy+1][clickedx-1])!==turn)&&(getColor(chessTable[clickedy+1][clikedx-1])!=="empty"))
+      if((getColor(clickedx-1,clickedy+1)!==turn)&&(getColor(clickedx-1,clickedy+1)!=="empty"))
       {
         position.push([clickedy+1,clickedx-1]);
       }
@@ -97,7 +97,7 @@ const blackPawn=()=>
       {
         position.push([clickedy+i,clickedx+i]);
       }
-      else if(getColor(chessTable[clickedy+i][clickedx+i])!==turn)
+      else if(getColor(clickedx+i,clickedy+i)!==turn)
       {
         position.push([clickedy+i,clickedx+i]);
         break;
@@ -113,7 +113,7 @@ const blackPawn=()=>
       {
         position.push([clikedy-i,clickedx+i]);
       }
-      else if(getColor(chessTable[clickedy-i][clickedx+i])!==turn)
+      else if(getColor(clickedx+i,clickedy-i)!==turn)
       {
         position.push([clickedy-i,clickedx+i]);
         break;
@@ -129,7 +129,7 @@ const blackPawn=()=>
       {
         position.push([clickedy-i,clickedx-i]);
       }
-      else if(getColor(chessTable[clickedy-i][clickedx-i])!==turn)
+      else if(getColor(clickedx-i,clickedy-i)!==turn)
       {
         position.push([clickedy-i,clickedx-i]);
         break;
@@ -145,7 +145,7 @@ const blackPawn=()=>
       {
         position.push([clickedy+i,clickedx-i]);
       }
-      else if(getColor(chessTable[clickedy+i][clickedx-i])!==turn)
+      else if(getColor(clickedx-i,clickedy+i)!==turn)
       {
         position.push([clickedy+i,clickedx-i]);
         break;
@@ -166,7 +166,7 @@ const blackPawn=()=>
       {
         position.push([clickedy,clickedx-i]);
       }
-      else if(getColor(chessTable[clickedy][clickedx-i])!==turn)
+      else if(getColor(clickedx-i,clickedy)!==turn)
       {
         position.push([clickedy,clickedx-i]);
         break;
@@ -182,7 +182,7 @@ const blackPawn=()=>
       {
         position.push([clickedy,clickedx+i]);
       }
-      else if(getColor(chessTable[clickedy][clickedx+i])!==turn)
+      else if(getColor(clickedx+i,clickedy)!==turn)
       {
         position.push([clickedy,clickedx+i]);
         break;
@@ -198,7 +198,7 @@ const blackPawn=()=>
       {
         position.push([clickedy+i,clickedx]);
       }
-      else if(getColor(chessTable[clickedy+i][clickedx])!==turn)
+      else if(getColor(clickedx,clickedy+i)!==turn)
       {
         position.push([clickedy+i,clickedx]);
         break;
@@ -214,7 +214,7 @@ const blackPawn=()=>
       {
         position.push([clickedy-i,clickedx]);
       }
-      else if(getColor(chessTable[clickedy-i][clickedx])!==turn)
+      else if(getColor(clickedx,clickedy-i)!==turn)
       {
         position.push([clickedy-i,clickedx]);
         break;
@@ -231,56 +231,56 @@ const blackPawn=()=>
     let position=[];
     if(x<6&&y<7)
     {
-      if((chessTable[clickedy+1][clickedx+2]==="")||(getColor(chessTable[clickedy+1][clickedx+2])!==turn))
+      if((chessTable[clickedy+1][clickedx+2]==="")||(getColor(clickedx+2,clickedy+1)!==turn))
       {
         position.push([clickedy+1,clickedx+2]);
       }
     }
     if(x<6&&y>0)
     {
-      if((chessTable[clickedy-1][clickedx+2]==="")||(getColor(chessTable[clickedy-1][clickedx+2])!==turn))
+      if((chessTable[clickedy-1][clickedx+2]==="")||(getColor(clickedx+2,clickedy-1)!==turn))
       {
         position.push([clickedy-1,clickedx+2]);
       }
     }
     if(x>1&&y>0)
     {
-      if((chessTable[clickedy-1][clickedx-2]==="")||(getColor(chessTable[clickedy-1][clickedx-2])!==turn))
+      if((chessTable[clickedy-1][clickedx-2]==="")||(clickedx-2,clickedy-1)!==turn))
       {
         position.push([clickedy-1,clickedx-2]);
       }
     }
     if(x>1&&y<7)
     {
-      if((chessTable[clickedy+1][clickedx-2]==="")||(getColor(chessTable[clickedy+1][clickedx-2])!==turn))
+      if((chessTable[clickedy+1][clickedx-2]==="")||(getColor(clickedx-2,clickedy+1)!==turn))
       {
         position.push([clickedy+1,clickedx-2]);
       }
     }
     if(x<7&&y<6)
     {
-      if((chessTable[clickedy+2][clickedx+1]==="")||(getColor(chessTable[clickedy+2][clickedx+1])!==turn))
+      if((chessTable[clickedy+2][clickedx+1]==="")||(getColor(clickedx+1,clickedy+2)!==turn))
       {
         position.push([clickedy+2,clickedx+1]);
       }
     }
     if(x>0&&y<6)
     {
-      if((chessTable[clickedy+2][clickedx-1]==="")||(getColor(chessTable[clickedy+2][clickedx-1])!==turn))
+      if((chessTable[clickedy+2][clickedx-1]==="")||(getColor(clickedx-1,clickedy+2)!==turn))
       {
         position.push([clickedy+2,clickedx-1]);
       }
     }
     if(x>0&&y>1)
     {
-      if((chessTable[clickedy-2][clickedx-1]==="")||(getColor(chessTable[clickedy-2][clickedx-1])!==turn))
+      if((chessTable[clickedy-2][clickedx-1]==="")||(getColor(clickedx-1,clickedy-2)!==turn))
       {
         position.push([clickedy-2,clickedx-1]);
       }
     }
     if(x<7&&y>1)
     {
-      if((chessTable[clickedy-2][clickedx+1]==="")||(getColor(chessTable[clickedy-2][clickedx+1])!==turn))
+      if((chessTable[clickedy-2][clickedx+1]==="")||(getColor(clickedx+1,clickedy-2)!==turn))
       {
         position.push([clickedy-2,clickedx+1]);
       }
