@@ -24,6 +24,7 @@ export function TodoList() {
 const getColor=(x,y)=>
 {
   let color="empty";
+  con
 	if((chessTable[y][x].match("^w")!==null))
 	{
 		color="white"
