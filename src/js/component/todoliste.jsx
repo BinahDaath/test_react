@@ -295,11 +295,25 @@ const blackPawn=()=>
   }
 
 
+const whereCanItMove=
+{
+wp:whitePawn,
+bp:blackPawn,
+wkn:knigth,
+bkn:knigth,
+wb:bishop,
+bb:bishop,
+wr:rook,
+br:rook,
+wq:queen,
+bq:queen,
+wk:"",
+bk:"",
+}
 
 
 
 
-  
 
   const renderChessTable=(table)=>
     {
