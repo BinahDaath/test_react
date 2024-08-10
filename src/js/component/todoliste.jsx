@@ -403,14 +403,14 @@ bk:king,
                 //return "w";
             }
             //return "b";
-            return <div className="bg-black">{el===""? "empty":el}</div>
+            return <div className="bg-black text-white">{el===""? "empty":el}</div>
         }
         const renderChessCase2=(el,index)=>
         {
             if((index%2)===0)
             {
                 //return "b";
-                return <div className="bg-black">{el===""? "empty":el}</div>
+                return <div className="bg-black text-white">{el===""? "empty":el}</div>
             }
             //return "w";
             return <div className="bg-white">{el===""? "empty":el}</div>
