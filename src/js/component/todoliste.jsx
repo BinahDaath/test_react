@@ -305,37 +305,33 @@ const blackPawn=()=>
     
       if(clickedx>0)
       {
-        console.log("x>0")
         if((chessTable[clickedy][clickedx-1]==="")||(getColor(clickedx-1,clickedy)!==turn))
         {
           position.push([clickedy,clickedx-1])
         }
         if(clickedy>0)
         {
-          console.log("y>0")
           if((chessTable[clickedy-1][clickedx-1]==="")||(getColor(clickedx-1,clickedy-1)!==turn))
-          position.push([clickedy-1,clickedx-1])
+          {
+            position.push([clickedy-1,clickedx-1])
+          }
         }
         if(clickedy<7)
         {
-          console.log("y<7")
           if((chessTable[clickedy+1][clickedx-1]==="")||(getColor(clickedx-1,clickedy+1)!==turn))
-          position.push([clickedy+1,clickedx-1])
+          {
+            position.push([clickedy+1,clickedx-1])
+          }
         }
       }
-    
-    
-    
       if(clickedx<7)
       {
-        console.log("x<7")
         if((chessTable[clickedy][clickedx+1]==="")||(getColor(clickedx+1,clickedy)!==turn))
         {
           position.push([clickedy,clickedx+1])
         }
         if(clickedy>0)
         {
-          console.log("y>0")
           if((chessTable[clickedy-1][clickedx+1]==="")||(getColor(clickedx+1,clickedy-1)!==turn))
           {
             position.push([clickedy-1,clickedx+1])
@@ -343,7 +339,6 @@ const blackPawn=()=>
         }
         if(clickedy<7)
         {
-          console.log("y<7")
           if((chessTable[clickedy+1][clickedx+1]==="")||(getColor(clickedx+1,clickedy+1)!==turn))
           {
             position.push([clickedy+1,clickedx+1])
