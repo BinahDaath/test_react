@@ -297,6 +297,12 @@ const blackPawn=()=>
     return position1.concat(position2);
   }
 
+  const king=()=>
+  {
+    let position1=[];
+    //if(clickedx>0)
+  }
+
 
 const whereCanItMove=
 {
