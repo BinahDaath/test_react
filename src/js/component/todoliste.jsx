@@ -242,7 +242,7 @@ const blackPawn=()=>
     {
       if((chessTable[clickedy-1][clickedx+2]==="")||(getColor(clickedx+2,clickedy-1)!==turn))
       {
-        position.push({x:clickedy-1,y:clickedx+2});
+        position.push({y:clickedy-1,x:clickedx+2});
       }
     }
     if(clickedx>1&&clickedy>0)
@@ -435,17 +435,33 @@ bk:king,
     {
       setClicked(false);
       console.log(clicked);
-      let color=getColor(x,y)
+      let color=getColor(x,y);
+      let canmove=false;
+      let position=whereCanItMove[chessTable[clickedy][clickedx]]();
+      for(let i in position)
+      {
+        console.log("loop"+i);
+        if((position[i].x===x)&&(position[i].y===y))
+        {
+          canmove=true;
+          console.log("position"+i);
+          break
+        }
+      }
       //move(clikedx,clickedy,x,y)
       console.log("whereCanItMove")
       console.log(whereCanItMove[chessTable[clickedy][clickedx]]())
-      if(chessTable[y][x]=="")
+      if(canmove)
       {
         let ct=chessTable.slice();
         ct[y][x]=chessTable[clickedy][clickedx];
         ct[clickedy][clickedx]="";
         setchessTable(ct);
+        turn === "white" ? setTurn("black"):setTurn("white");
       }
+      /*if(chessTable[y][x]=="")
+      {
+      }*/
       //turn === "white" ? setTurn("black"):setTurn("white")
       //console.log(turn);
     }
