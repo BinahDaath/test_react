@@ -437,11 +437,9 @@ bk:king,
       let position=whereCanItMove[chessTable[clickedy][clickedx]]();
       for(let i in position)
       {
-        console.log("loop"+i);
         if((position[i].x===x)&&(position[i].y===y))
         {
           canmove=true;
-          console.log("position"+i);
           break
         }
       }
