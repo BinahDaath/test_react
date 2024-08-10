@@ -61,7 +61,7 @@ const blackPawn=()=>
     {
       if((getColor(clickedx-1,clickedy+1)!==turn)&&(getColor(clickedx-1,clickedy+1)!=="empty"))
       {
-        position.push([clickedy+1,clickedx-1]);
+        position.push({y:clickedy+1,x:clickedx-1});
       }
     }
     return position;
