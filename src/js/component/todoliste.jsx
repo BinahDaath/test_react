@@ -46,7 +46,7 @@ const getColor=(x,y)=>
 const blackPawn=()=>
   {
     let position=[];
-    if(chessTable[clickedy-1][clickedx]==="")
+    if(chessTable[clickedy+1][clickedx]==="")
     {
       position.push({y:clickedy+1,x:clickedx});
     }
