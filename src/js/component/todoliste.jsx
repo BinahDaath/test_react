@@ -299,8 +299,53 @@ const blackPawn=()=>
 
   const king=()=>
   {
-    let position1=[];
-    //if(clickedx>0)
+    let position=[];
+    if(clickedx>0)
+    {
+      if((chessTable[clickedy][clickedx-1]==="")||(getColor(clickedx-1,clickedy)!==turn))
+      {
+        position.push([clickedy,clickedx-1])
+      }
+      if(clickedy>0)
+      {
+        position.push([clickedy-1,clickedx-1])
+      }
+      if(clickedy<7)
+      {
+        position.push([clickedy+1,clickedx-1])
+      }
+    }
+    if(clickedx<7)
+    {
+      if((chessTable[clickedy][clickedx+1]==="")||(getColor(clickedx+1,clickedy)!==turn))
+      {
+        position.push([clickedy,clickedx+1])
+      }
+      if(clickedy>0)
+      {
+        position.push([clickedy-1,clickedx+1])
+      }
+      if(clickedy<7)
+      {
+        position.push([clickedy+1,clickedx+1])
+      }
+  
+    }
+    if(clickedy>0)
+    {
+      if((chessTable[clickedy-1][clickedx]==="")||(getColor(clickedx,clickedy-1)!==turn))
+      {
+        position.push([clickedy-1,clickedx])
+      }
+    }
+    if(clickedy<7)
+    {
+      if((chessTable[clickedy+1][clickedx]==="")||(getColor(clickedx,clickedy+1)!==turn))
+      {
+        position.push([clickedy+1,clickedx])
+      }
+    }
+    return position;
   }
 
 
@@ -316,8 +361,8 @@ wr:rook,
 br:rook,
 wq:queen,
 bq:queen,
-wk:"",
-bk:"",
+wk:king,
+bk:king,
 }
 
 
