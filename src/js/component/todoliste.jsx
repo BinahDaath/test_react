@@ -92,7 +92,7 @@ const blackPawn=()=>
   const bishop=()=>
   {
     let position=[];
-    for(let i=0;((clickedx+i)<8)&&((clickedy+i)<8);i=i+1)
+    for(let i=1;((clickedx+i)<8)&&((clickedy+i)<8);i=i+1)
     {
       if(chessTable[clickedy+i][clickedx+i]==="")
       {
@@ -108,7 +108,7 @@ const blackPawn=()=>
         break;
       }
     }
-    for(let i=0;((clickedx+i)<8)&&((clickedy-i)>=0);i=i+1)
+    for(let i=1;((clickedx+i)<8)&&((clickedy-i)>=0);i=i+1)
     {
       if(chessTable[clickedy-i][clickedx+i]==="")
       {
@@ -124,7 +124,7 @@ const blackPawn=()=>
         break;
       }
     }
-    for(let i=0;((clickedx-i)>=0)&&((clickedy-i)>=0);i=i+1)
+    for(let i=1;((clickedx-i)>=0)&&((clickedy-i)>=0);i=i+1)
     {
       if(chessTable[clickedy-i][clickedx-i]==="")
       {
@@ -140,7 +140,7 @@ const blackPawn=()=>
         break;
       }
     }
-    for(let i=0;((clickedx-i)>=0)&&((clickedy+i)<8);i=i+1)
+    for(let i=1;((clickedx-i)>=0)&&((clickedy+i)<8);i=i+1)
     {
       if(chessTable[clickedy+i][clickedx-i]==="")
       {
