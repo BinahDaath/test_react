@@ -419,7 +419,6 @@ bk:king,
         return renderChessCase2;
     }
 
-
   const handleClick=(e)=>
   {
     let c=document.querySelector("div.grid");
