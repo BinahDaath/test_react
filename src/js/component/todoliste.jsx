@@ -48,7 +48,7 @@ const blackPawn=()=>
     let position=[];
     if(chessTable[clickedy-1][clickedx]==="")
     {
-      position.push({y:clickedy-1,x:clickedx});
+      position.push({y:clickedy+1,x:clickedx});
     }
     if(clickedx<7)
     {
