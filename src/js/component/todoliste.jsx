@@ -345,9 +345,6 @@ const blackPawn=()=>
           }
         }
       }
-    
-    
-    
       if(clickedy>0)
       {
         if((chessTable[clickedy-1][clickedx]==="")||(getColor(clickedx,clickedy-1)!==turn))
