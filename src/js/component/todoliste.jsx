@@ -48,13 +48,13 @@ const blackPawn=()=>
     let position=[];
     if(chessTable[clickedy-1][clickedx]==="")
     {
-      position.push([clickedx,clickedy-1]);
+      position.push({y:clickedy-1,x:clickedx});
     }
     if(clickedx<7)
     {
       if((getColor(clickedx+1,clickedy+1)!==turn)&&(getColor(clickedx+1,clickedy+1)!=="empty"))
       {
-        position.push([clickedy+1,clickedx+1]);
+        position.push({y:clickedy+1,x:clickedx+1});
       }
     }
     if(clickedx>0)
