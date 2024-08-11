@@ -161,6 +161,7 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
   const rook=(chessTable,clickedx,clickedy)=>
   {
     let position=[];
+    let turn=getColor(chessTable,clickedx,clickedy)
     console.log("rook")
     for(let i=1;(clickedx-i)>-1;i=i+1)
     {
