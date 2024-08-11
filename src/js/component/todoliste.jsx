@@ -40,9 +40,6 @@ const getColor=(chessTable,x,y)=>
 }
 
 
-
-
-
 const blackPawn=(chessTable,clickedx,clickedy)=>
   {
     let position=[];
@@ -497,15 +494,15 @@ bk:king,
       //console.log(whereCanItMove[chessTable[clickedy][clickedx]](chessTable,clickedx,clickedy))
       if(canmove)
       {
-        let ct=chessTable.slice();
+        let ct=JSON.parse(JSON.stringify(chessTable))
         ct[y][x]=chessTable[clickedy][clickedx];
         ct[clickedy][clickedx]="";
         console.log(kingInCheck(ct,turn));
-        //if(!kingInCheck(ct,turn))
-        //{
-          //setchessTable(ct);
-          //turn === "white" ? setTurn("black"):setTurn("white");
-        //}
+        if(!kingInCheck(ct,turn))
+        {
+          setChessTable(ct);
+          turn === "white" ? setTurn("black"):setTurn("white");
+        }
         console.log(kingInCheck(ct,turn));
       }
       /*if(chessTable[y][x]=="")
