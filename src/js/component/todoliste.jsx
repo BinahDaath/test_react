@@ -11,7 +11,7 @@ export function TodoList() {
   const [clickedx,setClickedx]=useState();
   const [clickedy,setClickedy]=useState();
   const [turn,setTurn]=useState("white");
-  const [chessTable, setchessTable] = useState([
+  const [chessTable, setChessTable] = useState([
     ["br","bkn","bb","bq","bk","bb","bkn","br"],
     ["bp","bp","bp","bp","bp","bp","bp","bp"],
     ["","","","","","","",""],
