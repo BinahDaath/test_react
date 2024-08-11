@@ -46,6 +46,7 @@ const getColor=(chessTable,x,y)=>
 const blackPawn=(chessTable,clickedx,clickedy)=>
   {
     let position=[];
+    let turn=getColor(chessTable,clickedx,clickedy);
     if(chessTable[clickedy+1][clickedx]==="")
     {
       position.push({y:clickedy+1,x:clickedx});
@@ -69,6 +70,7 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
   const whitePawn=(chessTable,clickedx,clickedy)=>
   {
     let position=[];
+    let turn=getColor(chessTable,clickedx,clickedy);
     if(chessTable[clickedy-1][clickedx]==="")
     {
       position.push({y:clickedy-1,x:clickedx});
@@ -92,6 +94,8 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
   const bishop=(chessTable,clickedx,clickedy)=>
   {
     let position=[];
+    let turn=getColor(chessTable,clickedx,clickedy);
+    console.log(turn)
     for(let i=1;((clickedx+i)<8)&&((clickedy+i)<8);i=i+1)
     {
       if(chessTable[clickedy+i][clickedx+i]==="")
@@ -242,6 +246,7 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
   const knigth=(chessTable,clickedx,clickedy)=>
   {
     let position=[];
+    let turn=getColor(chessTable,clickedx,clickedy);
     if(clickedx<6&&clickedy<7)
     {
       if((chessTable[clickedy+1][clickedx+2]==="")||(getColor(chessTable,clickedx+2,clickedy+1)!==turn))
@@ -452,10 +457,14 @@ bk:king,
         }
         for(let i in enemyPiece)
         {
+          //console.log(chessTable[enemyPiece[i].y][enemyPiece[i].x])
+          //console.log(whereCanItMove[chessTable[enemyPiece[i].y][enemyPiece[i].x]](chessTable,enemyPiece[i].x,enemyPiece[i].y))
           checkPosition=checkPosition.concat(whereCanItMove[chessTable[enemyPiece[i].y][enemyPiece[i].x]](chessTable,enemyPiece[i].x,enemyPiece[i].y))
         }
         for(let i in checkPosition)
         {
+          console.log("("+kingPosition.x+","+kingPosition.y+")")
+          console.log("("+checkPosition[i].x+","+checkPosition[i].y+")")
           if((kingPosition.x===checkPosition[i].x)&&(kingPosition.y===checkPosition[i].y))
           {
             return true;
@@ -506,16 +515,18 @@ bk:king,
     }
     else if(chessTable[y][x]!=="")
     {
+      console.log(turn)
+      console.log(whereCanItMove[chessTable[y][x]](chessTable,x,y))
       let color=getColor(chessTable,x,y)
       if(color===turn)
       {
         setClicked(true);
         setClickedx(x);
         setClickedy(y);
-        console.log({clicked:clicked,color:color});
+        //console.log({clicked:clicked,color:color});
       }
     }
-    console.log({x:x,y:y,caseSize:caseSize,clicked:clicked,clickedx:clickedx,clickedy:clickedy,handw:handw});
+    //console.log({x:x,y:y,caseSize:caseSize,clicked:clicked,clickedx:clickedx,clickedy:clickedy,handw:handw});
   }
 
     //console.log(renderChessTable(chessTable))
