@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import rigoImage from "../../img/rigo-baby.jpg";
 export function TodoList() {
   //let s={width:"800px",height:"800px"};
   let handw=Math.min(window.innerHeight,window.innerWidth)
