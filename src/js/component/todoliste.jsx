@@ -45,7 +45,7 @@ const getPiece=(el)=>
     }
     if(el==="wk")
     {
-      return <i className="fas fa-chess-king text-white"></i>
+      return <i className="fas fa-chess-king text-white text-2xl"></i>
     }
 
   if(el==="bp")
