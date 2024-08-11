@@ -25,52 +25,52 @@ const getPiece=(el)=>
 {
   if(el==="wp")
     {
-      return <i className="fas fa-chess-pawn text-white"></i>
+      return <i className="fas fa-chess-pawn text-white text-7xl"></i>
     }
     if(el==="wkn")
     {
-      return <i className="fas fa-chess-knight text-white"></i>
+      return <i className="fas fa-chess-knight text-white text-7xl"></i>
     }
     if(el==="wb")
     {
-      return <i className="fas fa-chess-bishop text-white"></i>
+      return <i className="fas fa-chess-bishop text-white text-7xl"></i>
     }
     if(el==="wr")
     {
-      return <i className="fas fa-chess-rook text-white"></i>
+      return <i className="fas fa-chess-rook text-white text-7xl"></i>
     }
     if(el==="wq")
     {
-      return <i className="fas fa-chess-queen text-white"></i>
+      return <i className="fas fa-chess-queen text-white text-7xl"></i>
     }
     if(el==="wk")
     {
-      return <i className="fas fa-chess-king text-white text-2xl"></i>
+      return <i className="fas fa-chess-king text-white text-7xl"></i>
     }
 
   if(el==="bp")
   {
-    return <i className="fas fa-chess-pawn text-black"></i>
+    return <i className="fas fa-chess-pawn text-black text-7xl"></i>
   }
   if(el==="bkn")
   {
-    return <i className="fas fa-chess-knight text-black"></i>
+    return <i className="fas fa-chess-knight text-black text-7xl"></i>
   }
   if(el==="bb")
   {
-    return <i className="fas fa-chess-bishop text-black"></i>
+    return <i className="fas fa-chess-bishop text-black text-7xl"></i>
   }
   if(el==="br")
   {
-    return <i className="fas fa-chess-rook text-black"></i>
+    return <i className="fas fa-chess-rook text-black text-7xl"></i>
   }
   if(el==="bq")
   {
-    return <i className="fas fa-chess-queen text-black"></i>
+    return <i className="fas fa-chess-queen text-black text-7xl"></i>
   }
   if(el==="bk")
   {
-    return <i className="fas fa-chess-king text-black"></i>
+    return <i className="fas fa-chess-king text-black text-7xl"></i>
   }
 }
 const getColor=(chessTable,x,y)=>
@@ -466,21 +466,21 @@ bk:king,
         {
             if((index%2)===0)
             {
-                return <div className="bg-white">{el===""? "empty":getPiece(el)}</div>
+                return <div className="bg-white text-black flex flex-row justify-around" style={{height:caseSize+"px"}}>{el===""? "empty":getPiece(el)}</div>
                 //return "w";
             }
             //return "b";
-            return <div className="bg-black text-white">{el===""? "empty":getPiece(el)}</div>
+            return <div className="bg-black text-white flex flex-row justify-around" style={{height:caseSize+"px"}}>{el===""? "empty":getPiece(el)}</div>
         }
         const renderChessCase2=(el,index)=>
         {
             if((index%2)===0)
             {
                 //return "b";
-                return <div className="bg-black text-white">{el===""? "empty":getPiece(el)}</div>
+                return <div className="bg-black text-white flex flex-row justify-around" style={{height:caseSize+"px"}}>{el===""? "empty":getPiece(el)}</div>
             }
             //return "w";
-            return <div className="bg-white">{el===""? "empty":getPiece(el)}</div>
+            return <div className="bg-white text-black flex flex-row justify-around" style={{height:caseSize+"px"}}>{el===""? "empty":getPiece(el)}</div>
         }
         if((index%2)===0)
         {
