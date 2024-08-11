@@ -95,7 +95,6 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
   {
     let position=[];
     let turn=getColor(chessTable,clickedx,clickedy);
-    console.log(turn)
     for(let i=1;((clickedx+i)<8)&&((clickedy+i)<8);i=i+1)
     {
       if(chessTable[clickedy+i][clickedx+i]==="")
@@ -496,8 +495,8 @@ bk:king,
         }
       }
       //move(clikedx,clickedy,x,y)
-      console.log("whereCanItMove")
-      console.log(whereCanItMove[chessTable[clickedy][clickedx]](chessTable,clickedx,clickedy))
+      //console.log("whereCanItMove")
+      //console.log(whereCanItMove[chessTable[clickedy][clickedx]](chessTable,clickedx,clickedy))
       if(canmove)
       {
         let ct=chessTable.slice();
