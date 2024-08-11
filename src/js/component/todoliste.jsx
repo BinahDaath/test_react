@@ -164,9 +164,7 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
   const rook=(chessTable,clickedx,clickedy)=>
   {
     let position=[];
-    let t=(clickedy+1)
-    console.log("rook")
-    console.log(t);
+    //console.log("rook")
     //console.log(chessTable);
     //console.log(clickedx+","+clickedy);
     //console.log(getColor(chessTable,clickedx,clickedy))
@@ -503,11 +501,11 @@ bk:king,
         ct[y][x]=chessTable[clickedy][clickedx];
         ct[clickedy][clickedx]="";
         console.log(kingInCheck(ct,turn));
-        if(!kingInCheck(ct,turn))
-        {
-          setchessTable(ct);
-          turn === "white" ? setTurn("black"):setTurn("white");
-        }
+        //if(!kingInCheck(ct,turn))
+        //{
+          //setchessTable(ct);
+          //turn === "white" ? setTurn("black"):setTurn("white");
+        //}
         console.log(kingInCheck(ct,turn));
       }
       /*if(chessTable[y][x]=="")
