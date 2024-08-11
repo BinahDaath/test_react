@@ -21,6 +21,10 @@ export function TodoList() {
     ["wp","wp","wp","wp","wp","wp","wp","wp"],
     ["wr","wkn","wb","wq","wk","wb","wkn","wr"]
 ]);
+const getPiece=(el)=>
+{
+  
+}
 const getColor=(chessTable,x,y)=>
 {
   let color="empty";
