@@ -161,8 +161,13 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
   const rook=(chessTable,clickedx,clickedy)=>
   {
     let position=[];
-    let turn=getColor(chessTable,clickedx,clickedy)
+    let t=(clickedy+1)
     console.log("rook")
+    console.log(t);
+    //console.log(chessTable);
+    //console.log(clickedx+","+clickedy);
+    //console.log(getColor(chessTable,clickedx,clickedy))
+    let turn=getColor(chessTable,clickedx,clickedy)
     for(let i=1;(clickedx-i)>-1;i=i+1)
     {
       if(chessTable[clickedy][clickedx-i]==="")
@@ -181,7 +186,11 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
     }
     for(let i=1;(clickedx+i)<8;i=i+1)
     {
-      console.log((clickedx)+","+clickedy)
+      console.log("inside")
+      console.log(chessTable);
+      console.log(clickedy+","+(t))
+      console.log(chessTable[clickedy][clickedx+i])
+      console.log(getColor(chessTable,clickedx+i,clickedy))
       if(chessTable[clickedy][clickedx+i]==="")
       {
         position.push({y:clickedy,x:clickedx+i});
@@ -427,9 +436,9 @@ bk:king,
         let enemyPieceColor=(color==="white" ? "b":"w")
         let enemyPiece=[]
         let checkPosition=[]
-        for(let i in chessTable)
+        for(let i=0; i<chessTable.length;i=i+1)
         {
-          for(let j in chessTable[i])
+          for(let j=0; j<chessTable[i].length;j=j+1)
           {
             if(chessTable[i][j]===king)
             {
@@ -443,9 +452,6 @@ bk:king,
         }
         for(let i in enemyPiece)
         {
-          console.log("kingCheck");
-          console.log(chessTable);
-          console.log(whereCanItMove[chessTable[enemyPiece[i].y][enemyPiece[i].x]])
           checkPosition=checkPosition.concat(whereCanItMove[chessTable[enemyPiece[i].y][enemyPiece[i].x]](chessTable,enemyPiece[i].x,enemyPiece[i].y))
         }
         for(let i in checkPosition)
