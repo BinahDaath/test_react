@@ -23,7 +23,55 @@ export function TodoList() {
 ]);
 const getPiece=(el)=>
 {
-  
+  if(el==="wp")
+    {
+      return <i className="fas fa-chess-pawn text-white"></i>
+    }
+    if(el==="wkn")
+    {
+      return <i className="fas fa-chess-knight text-white"></i>
+    }
+    if(el==="wb")
+    {
+      return <i className="fas fa-chess-bishop text-white"></i>
+    }
+    if(el==="wr")
+    {
+      return <i className="fas fa-chess-rook text-white"></i>
+    }
+    if(el==="wq")
+    {
+      return <i className="fas fa-chess-queen text-white"></i>
+    }
+    if(el==="wk")
+    {
+      return <i className="fas fa-chess-king text-white"></i>
+    }
+
+  if(el==="bp")
+  {
+    return <i className="fas fa-chess-pawn text-black"></i>
+  }
+  if(el==="bkn")
+  {
+    return <i className="fas fa-chess-knight text-black"></i>
+  }
+  if(el==="bb")
+  {
+    return <i className="fas fa-chess-bishop text-black"></i>
+  }
+  if(el==="br")
+  {
+    return <i className="fas fa-chess-rook text-black"></i>
+  }
+  if(el==="bq")
+  {
+    return <i className="fas fa-chess-queen text-black"></i>
+  }
+  if(el==="bk")
+  {
+    return <i className="fas fa-chess-king text-black"></i>
+  }
 }
 const getColor=(chessTable,x,y)=>
 {
@@ -418,21 +466,21 @@ bk:king,
         {
             if((index%2)===0)
             {
-                return <div className="bg-white">{el===""? "empty":el}</div>
+                return <div className="bg-white">{el===""? "empty":getPiece(el)}</div>
                 //return "w";
             }
             //return "b";
-            return <div className="bg-black text-white">{el===""? "empty":el}</div>
+            return <div className="bg-black text-white">{el===""? "empty":getPiece(el)}</div>
         }
         const renderChessCase2=(el,index)=>
         {
             if((index%2)===0)
             {
                 //return "b";
-                return <div className="bg-black text-white">{el===""? "empty":el}</div>
+                return <div className="bg-black text-white">{el===""? "empty":getPiece(el)}</div>
             }
             //return "w";
-            return <div className="bg-white">{el===""? "empty":el}</div>
+            return <div className="bg-white">{el===""? "empty":getPiece(el)}</div>
         }
         if((index%2)===0)
         {
