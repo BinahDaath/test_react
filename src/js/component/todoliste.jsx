@@ -47,6 +47,10 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
     if(chessTable[clickedy+1][clickedx]==="")
     {
       position.push({y:clickedy+1,x:clickedx});
+      if((chessTable[clickedy+2][clickedx]==="")&&(clickedy===1))
+      {
+        position.push({y:clickedy+2,x:clickedx})
+      }
     }
     if(clickedx<7)
     {
@@ -71,6 +75,10 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
     if(chessTable[clickedy-1][clickedx]==="")
     {
       position.push({y:clickedy-1,x:clickedx});
+      if((chessTable[clickedy-2][clickedx]==="")&&(clickedy===6))
+      {
+        position.push({y:clickedy-2,x:clickedx})
+      }
     }
     if((clickedx)<7)
     {
