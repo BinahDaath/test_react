@@ -189,11 +189,11 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
     }
     for(let i=1;(clickedx+i)<8;i=i+1)
     {
-      console.log("inside")
-      console.log(chessTable);
-      console.log(clickedy+","+(t))
-      console.log(chessTable[clickedy][clickedx+i])
-      console.log(getColor(chessTable,clickedx+i,clickedy))
+      //console.log("inside")
+      //console.log(chessTable);
+      //console.log(clickedy+","+(t))
+      //console.log(chessTable[clickedy][clickedx+i])
+      //console.log(getColor(chessTable,clickedx+i,clickedy))
       if(chessTable[clickedy][clickedx+i]==="")
       {
         position.push({y:clickedy,x:clickedx+i});
@@ -462,8 +462,8 @@ bk:king,
         }
         for(let i in checkPosition)
         {
-          console.log("("+kingPosition.x+","+kingPosition.y+")")
-          console.log("("+checkPosition[i].x+","+checkPosition[i].y+")")
+          //console.log("("+kingPosition.x+","+kingPosition.y+")")
+          //console.log("("+checkPosition[i].x+","+checkPosition[i].y+")")
           if((kingPosition.x===checkPosition[i].x)&&(kingPosition.y===checkPosition[i].y))
           {
             return true;
@@ -502,6 +502,7 @@ bk:king,
         let ct=chessTable.slice();
         ct[y][x]=chessTable[clickedy][clickedx];
         ct[clickedy][clickedx]="";
+        console.log(kingInCheck(ct,turn));
         if(!kingInCheck(ct,turn))
         {
           setchessTable(ct);
