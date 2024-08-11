@@ -502,9 +502,12 @@ bk:king,
         let ct=chessTable.slice();
         ct[y][x]=chessTable[clickedy][clickedx];
         ct[clickedy][clickedx]="";
-        setchessTable(ct);
+        if(!kingInCheck(ct,turn))
+        {
+          setchessTable(ct);
+          turn === "white" ? setTurn("black"):setTurn("white");
+        }
         console.log(kingInCheck(ct,turn));
-        turn === "white" ? setTurn("black"):setTurn("white");
       }
       /*if(chessTable[y][x]=="")
       {
