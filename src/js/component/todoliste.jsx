@@ -589,7 +589,7 @@ bk:king,
 
     //console.log(renderChessTable(chessTable))
   return (
-    <div className="grid grid-cols-8 gap-0 bg-sky-500 bg-opacity-0" style={s} onClick={handleClick}>
+    <div className="grid grid-cols-8 gap-0 bg-sky-500 bg-opacity-25" style={s} onClick={handleClick}>
         {renderChessTable(chessTable)}
     </div>
   );
