@@ -370,7 +370,7 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
   const king=(chessTable,clickedx,clickedy)=>
     {
       let position=[];
-    
+      let turn=getColor(chessTable,clickedx,clickedy);
     
     
       if(clickedx>0)
@@ -426,7 +426,7 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
       {
         if((chessTable[clickedy+1][clickedx]==="")||(getColor(chessTable,clickedx,clickedy+1)!==turn))
         {
-          position.push({x:clickedy+1,y:clickedx})
+          position.push({y:clickedy+1,x:clickedx})
         }
       }
       return position;
