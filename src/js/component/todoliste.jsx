@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export function TodoList() {
+export function TodoList({playerColor}) {
   //let s={width:"800px",height:"800px"};
   let handw=Math.min(window.innerHeight,window.innerWidth)
   //let s={width:Math.floor((window.innerHeight/8)*8)+"px",height:Math.floor((window.innerHeight/8)*8)};
