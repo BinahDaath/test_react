@@ -21,6 +21,16 @@ export function TodoList({playerColor}) {
     ["wp","wp","wp","wp","wp","wp","wp","wp"],
     ["wr","wkn","wb","wq","wk","wb","wkn","wr"]
 ]);
+const getClickPosition=(playerColor)=>
+{
+  let c=document.querySelector("div.grid");
+  let bcr=c.getBoundingClientRect();
+  let left=bcr["x"];
+  let top=bcr["y"];
+  let x=Math.floor((e.clientX-left)/caseSize);
+  let y=Math.floor((e.clientY-top)/caseSize);
+  return (playerColor==="white" ? {y:y,x:x}:{y:(7-y),x:(7-x)});
+}
 const getPiece=(el)=>
 {
   if(el==="wp")
@@ -528,12 +538,15 @@ bk:king,
       }
   const handleClick=(e)=>
   {
-    let c=document.querySelector("div.grid");
-    let bcr=c.getBoundingClientRect();
-    let left=bcr["x"];
-    let top=bcr["y"];
-    let x=Math.floor((e.clientX-left)/caseSize);
-    let y=Math.floor((e.clientY-top)/caseSize);
+    //let c=document.querySelector("div.grid");
+    //let bcr=c.getBoundingClientRect();
+    //let left=bcr["x"];
+    //let top=bcr["y"];
+    //let x=Math.floor((e.clientX-left)/caseSize);
+    //let y=Math.floor((e.clientY-top)/caseSize);
+    let clickPosition=getClickPosition("white");
+    let x=clickPosition.x;
+    let y=clickPosition.y;
     if(clicked)
     {
       setClicked(false);
