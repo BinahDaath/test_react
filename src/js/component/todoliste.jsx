@@ -21,14 +21,14 @@ export function TodoList({playerColor}) {
     ["wp","wp","wp","wp","wp","wp","wp","wp"],
     ["wr","wkn","wb","wq","wk","wb","wkn","wr"]
 ]);
-const getClickPosition=(playerColor)=>
+const getClickPosition=(playerColor,X,Y)=>
 {
   let c=document.querySelector("div.grid");
   let bcr=c.getBoundingClientRect();
   let left=bcr["x"];
   let top=bcr["y"];
-  let x=Math.floor((e.clientX-left)/caseSize);
-  let y=Math.floor((e.clientY-top)/caseSize);
+  let x=Math.floor((X-left)/caseSize);
+  let y=Math.floor((Y-top)/caseSize);
   return (playerColor==="white" ? {y:y,x:x}:{y:(7-y),x:(7-x)});
 }
 const getPiece=(el)=>
@@ -544,7 +544,7 @@ bk:king,
     //let top=bcr["y"];
     //let x=Math.floor((e.clientX-left)/caseSize);
     //let y=Math.floor((e.clientY-top)/caseSize);
-    let clickPosition=getClickPosition("white");
+    let clickPosition=getClickPosition("white",e.clientX,e.clientY);
     let x=clickPosition.x;
     let y=clickPosition.y;
     if(clicked)
