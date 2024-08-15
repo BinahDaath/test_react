@@ -464,7 +464,9 @@ bk:king,
 
   const renderChessTable=(table)=>
     {
-        return table.map(renderChessRow);
+        let t=JSON.parse(JSON.stringify(table));
+        t=t.reverse();
+        return t.map(renderChessRow);
     }
   const renderChessRow=(table,index)=>
     {
