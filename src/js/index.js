@@ -10,5 +10,5 @@ import Home from "./component/home.jsx";
 import {TodoList} from "./component/todoliste.jsx";
 
 //render your react application
-ReactDOM.createRoot(document.getElementById('app')).render(<div><TodoList/></div>);
+ReactDOM.createRoot(document.getElementById('app')).render(<div><TodoList playerColor="white"/></div>);
 

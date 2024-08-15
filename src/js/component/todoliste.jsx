@@ -240,11 +240,11 @@ const blackPawn=(chessTable,clickedx,clickedy)=>
     {
       if(chessTable[clickedy][clickedx-i]==="")
       {
-        position.push({x:clickedy,y:clickedx-i});
+        position.push({y:clickedy,x:clickedx-i});
       }
       else if(getColor(chessTable,clickedx-i,clickedy)!==turn)
       {
-        position.push({x:clickedy,y:clickedx-i});
+        position.push({y:clickedy,x:clickedx-i});
         break;
       }
       else
@@ -544,7 +544,7 @@ bk:king,
     //let top=bcr["y"];
     //let x=Math.floor((e.clientX-left)/caseSize);
     //let y=Math.floor((e.clientY-top)/caseSize);
-    let clickPosition=getClickPosition("white",e.clientX,e.clientY);
+    let clickPosition=getClickPosition(playerColor,e.clientX,e.clientY);
     let x=clickPosition.x;
     let y=clickPosition.y;
     if(clicked)
