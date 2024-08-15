@@ -465,9 +465,10 @@ bk:king,
   const renderChessTable=(table)=>
     {
         let t=JSON.parse(JSON.stringify(table));
-        if(playerColor==="black")
+        if(playerColor!=="white")
         {
           t=t.reverse();
+          t=[t[0].reverse(),t[1].reverse(),t[2].reverse(),t[3].reverse(),t[4].reverse(),t[5].reverse(),t[6].reverse(),t[7].reverse(),]
         }
         return t.map(renderChessRow);
     }
